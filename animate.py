@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
+savetofile = False
+
 f = open("samples.txt", "r")
 v = []
 i = 0
@@ -31,10 +33,9 @@ def animate(i):
 anim = animation.FuncAnimation(
     fig, animate, interval=1, frames=int(len(v)/100)+1)
 
-# plt.draw()
-# plt.show()
-
-
-Writer = animation.writers['ffmpeg']
-writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=-1)
-anim.save('mic.mp4', writer=writer)
+if savetofile:
+    Writer = animation.writers['ffmpeg']
+    writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=-1)
+    anim.save('mic.mp4', writer=writer)
+else:
+    plt.show()

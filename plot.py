@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+savetofile = False
+
 f = open("samples.txt", "r")
 v = []
 
@@ -13,6 +15,8 @@ line1 = plt.axhline(np.e-2, label="e-2", color="red")
 plt.legend([line1], ["e-2"])
 plt.xlabel("Number of samples taken")
 plt.ylabel("Median Money taken")
-# plt.show()
+if savetofile:
+    plt.savefig('filename.png', dpi=300)   
+else:
+    plt.show()
 
-plt.savefig('filename.png', dpi=300)
