@@ -17,17 +17,15 @@ fig, ax = plt.subplots(figsize=(10, 6))
 def animate(i):
     plt.cla()
 
-    line1 = plt.axhline(np.e-2, label="e-2", color="red")
-    plt.legend([line1], ["e-2"])
     plt.xlabel("Number of samples taken")
-    plt.ylabel("Median Money taken")
+    plt.ylabel("Percent of winning games")
 
-    ax.set(xlim=(0, len(v)), ylim=(0, 1))
+    ax.set(xlim=(0, len(v)), ylim=(0, 50))
     if i < 3:
         i = 3
     index = int(i*(len(v)/100))
     # print(index)
-    ax.plot(v[:index], color='black')
+    ax.plot(v[:index])
 
 
 anim = animation.FuncAnimation(
