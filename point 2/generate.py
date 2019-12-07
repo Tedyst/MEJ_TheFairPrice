@@ -13,7 +13,6 @@ for joc in range(1, samples+1):
         nr += 1
         v.append(True)
     f.write(str(winning/joc*100) + '\n')
-    if len(v) > 3:
+    if nr > 2:
         winning += 1
-
 print(str(winning/samples*100) + '%')

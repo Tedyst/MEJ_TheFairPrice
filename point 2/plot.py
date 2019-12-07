@@ -11,7 +11,7 @@ for line in f:
 
 plt.figure(dpi=100)
 plt.plot(v)
-plt.ylim(0, 50)
+plt.ylim(0, 10)
 plt.xlabel("Number of samples taken")
 plt.ylabel("Percent of winning games")
 if savetofile:
